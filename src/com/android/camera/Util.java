@@ -133,6 +133,31 @@ public class Util {
     private static float sPixelDensity = 1;
     private static ImageFileNamer sImageFileNamer;
 
+<<<<<<< HEAD
+=======
+    // Samsung camcorder mode
+    private static boolean sSamsungCamMode;
+
+    // HTC camcorder mode
+    private static boolean sHTCCamMode;
+
+    // For setting video size before recording starts
+    private static boolean sEarlyVideoSize;
+
+    // For setting video desired profile size
+    private static boolean sProfileVideoSize;
+
+    // Samsung ZSL mode
+    private static boolean sEnableZSL;
+
+    // Workaround for QC cameras with broken face detection on front camera
+    private static boolean sNoFaceDetectOnFrontCamera;
+
+    // Software HDR based on manual shots with multiple exposure
+    private static boolean sEnableSoftwareHDR;
+    private static boolean sDoSoftwareHDRShot;
+
+>>>>>>> bdff6dc... [1/2] Camera: add software HDR rendering
     private Util() {
     }
 
@@ -144,12 +169,67 @@ public class Util {
         sPixelDensity = metrics.density;
         sImageFileNamer = new ImageFileNamer(
                 context.getString(R.string.image_file_name_format));
+<<<<<<< HEAD
+=======
+
+        // These come from the config, but are needed before parameters are set.
+        sSamsungCamMode = context.getResources().getBoolean(R.bool.needsSamsungCamMode);
+        sHTCCamMode = context.getResources().getBoolean(R.bool.needsHTCCamMode);
+        sProfileVideoSize = context.getResources().getBoolean(R.bool.useProfileVideoSize);
+        sEarlyVideoSize = context.getResources().getBoolean(R.bool.needsEarlyVideoSize);
+        sEnableZSL = context.getResources().getBoolean(R.bool.enableZSL);
+        sNoFaceDetectOnFrontCamera = context.getResources().getBoolean(
+                R.bool.noFaceDetectOnFrontCamera);
+
+        // Todo: uncomment once debugged
+        sEnableSoftwareHDR = !context.getResources().getBoolean(R.bool.disableSoftwareHDR);
+        sDoSoftwareHDRShot = false;
+>>>>>>> bdff6dc... [1/2] Camera: add software HDR rendering
     }
 
     public static int dpToPixel(int dp) {
         return Math.round(sPixelDensity * dp);
     }
 
+<<<<<<< HEAD
+=======
+    public static boolean useHTCCamMode() {
+        return sHTCCamMode;
+    }
+
+    public static boolean useSamsungCamMode() {
+        return sSamsungCamMode;
+    }
+
+    public static boolean useProfileVideoSize() {
+        return sProfileVideoSize;
+    }
+
+    public static boolean needsEarlyVideoSize() {
+        return sEarlyVideoSize;
+    }
+
+    public static boolean enableZSL() {
+        return sEnableZSL;
+    }
+
+    public static boolean useSoftwareHDR() {
+        return sEnableSoftwareHDR;
+    }
+
+    public static void setDoSoftwareHDRShot(boolean enable) {
+        sDoSoftwareHDRShot = enable;
+    }
+
+    public static boolean getDoSoftwareHDRShot() {
+        return sDoSoftwareHDRShot;
+    }
+
+    public static boolean noFaceDetectOnFrontCamera() {
+        return sNoFaceDetectOnFrontCamera;
+    }
+
+>>>>>>> bdff6dc... [1/2] Camera: add software HDR rendering
     // Rotates the bitmap by the specified degree.
     // If a new bitmap is created, the original bitmap is recycled.
     public static Bitmap rotate(Bitmap b, int degrees) {
