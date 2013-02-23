@@ -1601,10 +1601,6 @@ public class PhotoModule
 
     @Override
     public void onShutterButtonClick() {
-<<<<<<< HEAD
-=======
-        int nbBurstShots = Integer.valueOf(mPreferences.getString(CameraSettings.KEY_BURST_MODE, "1"));
-
         if (Util.getDoSoftwareHDRShot() && !mHDRShotInProgress && !mHDRRendering) {
             Log.d(TAG, "Starting HDR shot - set min exposure");
             mParameters.setExposureCompensation(mParameters.getMinExposureCompensation());
@@ -1719,7 +1715,6 @@ public class PhotoModule
             }
         }
 
->>>>>>> bdff6dc... [1/2] Camera: add software HDR rendering
         if (mPaused || collapseCameraControls()
                 || (mCameraState == SWITCHING_CAMERA)
                 || (mCameraState == PREVIEW_STOPPED)) return;
