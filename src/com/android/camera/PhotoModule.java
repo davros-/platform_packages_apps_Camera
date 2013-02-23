@@ -293,12 +293,6 @@ public class PhotoModule
     private final Handler mHandler = new MainHandler();
     private PreferenceGroup mPreferenceGroup;
 
-<<<<<<< HEAD
-=======
-    // Burst mode
-    private int mBurstShotsDone = 0;
-    private boolean mBurstShotInProgress = false;
-
     // Software HDR mode
     private boolean mHDRShotInProgress = false;
     private boolean mHDRExposureSet = false;
@@ -306,7 +300,6 @@ public class PhotoModule
     private ProgressDialog mHdrProgressDialog = null;
     private static ArrayList<Uri> sHDRShotsPaths = new ArrayList<Uri>();
 
->>>>>>> bdff6dc... [1/2] Camera: add software HDR rendering
     private boolean mQuickCapture;
 
     CameraStartUpThread mCameraStartUpThread;
