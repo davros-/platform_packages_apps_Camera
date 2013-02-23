@@ -1745,10 +1745,6 @@ public class PhotoModule
 
         mSnapshotOnIdle = false;
         mFocusManager.doSnap();
-<<<<<<< HEAD
-=======
-        mBurstShotsDone++;
-
         if (mHDRShotInProgress) {
             mHDRExposureSet = false;
             mSnapshotOnIdle = true;
@@ -1763,7 +1759,6 @@ public class PhotoModule
             // queue a new shot until we done all our shots
             mSnapshotOnIdle = true;
         }
->>>>>>> bdff6dc... [1/2] Camera: add software HDR rendering
     }
 
     @Override
@@ -2234,15 +2229,7 @@ public class PhotoModule
 
         mFocusManager.onPreviewStarted();
 
-<<<<<<< HEAD
-        if (mSnapshotOnIdle) {
-=======
-        // Set camera mode
-        CameraSettings.setVideoMode(mParameters, false);
-        mCameraDevice.setParameters(mParameters);
-
         if (mSnapshotOnIdle && (mBurstShotsDone > 0 && !mHDRShotInProgress)) {
->>>>>>> bdff6dc... [1/2] Camera: add software HDR rendering
             mHandler.post(mDoSnapRunnable);
         }
     }
